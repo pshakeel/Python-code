@@ -1,0 +1,19 @@
+print("THANK YOU FOR USING PYTHON PIZZA DELIVERIES  ")
+size = input("please enter your pizza size in tho form of S, M, L :- ")
+add_papperonies=input("Do you want to add papperonies ? enter Y or N :- ")
+extra_cheez= input("Do you want to add extra chees? enter Y or N :- ")
+bill=0
+if size=="M":
+    bill+=15
+elif size=="S":
+    bill+=20
+else:
+    bill+=25
+if add_papperonies=="Y":
+    if size=="S":
+        bill+=2
+    else:
+        bill+=3
+if extra_cheez=="Y":
+    bill+=1
+print(f"Your total bill is: ${bill}.")
