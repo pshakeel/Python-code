@@ -1,0 +1,10 @@
+age=int(input("enter your age :- "))
+live_years= 60- age
+live_months=live_years*12
+live_weeks=live_years*52
+live_days=live_years*365
+live_hrs=live_days*24
+live_minutes=live_hrs*60
+live_sec=live_minutes*60
+print(f'''you have {live_years} years,\n {live_months} months,
+ {live_weeks} weeks,\n {live_hrs} hrs,\n {live_minutes} minutes,\n {live_sec} sec are remaining.''')
