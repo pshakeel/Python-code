@@ -1,0 +1,43 @@
+
+import random
+from hangman_words import word_list
+computer_chose=random.choice(word_list)
+print(f"Solution is {computer_chose}.")
+
+lives = 6
+from hangman_art import logo
+print(logo)
+from hangman_art import stages
+disply=[]
+word_length=len(computer_chose)
+for _ in range(word_length):
+    disply += "_"
+
+
+end_of_game= False
+while not end_of_game:
+    guess=input("chose a char :- ").lower()
+    if guess in disply:
+        print(f"You've already guessed {guess}")
+
+
+    for psition in range(word_length):
+        letter=computer_chose[psition]
+
+        if letter==guess:
+            disply[psition]=letter
+
+    if guess not in computer_chose:
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+        lives-= 1
+        if lives==0:
+            end_of_game=True
+            print("You lose.")
+
+
+    print(disply)
+    if "_" not in disply:
+        end_of_game=True
+        print("You win..")
+
+    print(stages[lives])
